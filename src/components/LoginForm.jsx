@@ -34,7 +34,6 @@ const LoginForm = () => {
             const response = await axios.post("https://gymgrid-backend.onrender.com/api/v1/user/login", formData);
             console.log("user data", response.data);
             const userName = response.data.userName;
-
             // console.log("username",userName);
             setFormData({
                 email: "",
@@ -42,11 +41,7 @@ const LoginForm = () => {
             });
             setError(null);
             navigate(`/profile/${userName}`);
-            toast.success('Login Successfully')
-            setTimeout(() => {
-                window.location.reload();
-            }, 3000);
-
+            window.location.reload();
         } catch (error) {
             console.error("Error logging in:", error);
             toast.error("Wrong User or Password!");
