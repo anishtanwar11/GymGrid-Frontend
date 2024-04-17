@@ -41,7 +41,6 @@ const LoginForm = () => {
             });
             setError(null);
             navigate(`/profile/${userName}`);
-            window.location.reload();
         } catch (error) {
             console.error("Error logging in:", error);
             toast.error("Wrong User or Password!");
